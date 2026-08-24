@@ -9,7 +9,8 @@ type Project = {
   url: string;
   displayUrl: string;
   category: string;
-  description: string;
+  challenge: string;
+  solution: string;
   technologies: string[];
   image: string;
   alt: string;
@@ -23,8 +24,10 @@ const projects: Project[] = [
     url: "https://94convenience.com",
     displayUrl: "94convenience.com",
     category: "E-Commerce & Food Delivery Platform",
-    description:
-      "Web application built for 94 Convenience & Deli in St. Peters, MO. Features custom food menus, DoorDash delivery integration, SNAP EBT & U-Haul service highlights, and 24/7 store operational details.",
+    challenge:
+      "A local convenience store and deli in St. Peters, MO required a modern digital presence to manage food menus, delivery options, and local customer inquiries efficiently.",
+    solution:
+      "Mind Masters engineered a high-performance web platform featuring custom food ordering menus, DoorDash delivery integration, SNAP EBT highlights, and 24/7 store operational details.",
     technologies: ["React", "TypeScript", "DoorDash API", "Tailwind CSS", "Node.js"],
     image: "https://images.unsplash.com/photo-1556742049-0a675659e366?q=80&w=1600&auto=format&fit=crop",
     alt: "94 Convenience E-Commerce & Food Delivery Platform",
@@ -36,8 +39,10 @@ const projects: Project[] = [
     url: "https://ucovyconnects.com",
     displayUrl: "ucovyconnects.com",
     category: "Technology Enablement & Consulting",
-    description:
-      "Enterprise technology enablement and consulting platform engineered for Ucovy Connects, connecting modern businesses with intelligent digital solutions, strategic network growth, and tech infrastructure.",
+    challenge:
+      "An enterprise technology consulting firm needed a modern digital platform to showcase intelligent business solutions, tech infrastructure services, and strategic network offerings to corporate clients.",
+    solution:
+      "Mind Masters developed a scalable digital enablement platform featuring custom frontend architecture, AI engine integrations, and high-availability cloud infrastructure.",
     technologies: ["Next.js", "AI Engine", "Cloud Infrastructure", "Tailwind CSS", "GraphQL"],
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop",
     alt: "Ucovy Connects Technology Enablement Platform",
@@ -73,7 +78,7 @@ export function BuildChooser() {
             <motion.div
               key={project.id}
               variants={fadeUp}
-              className="group relative rounded-3xl border border-white/10 bg-[#090a0f] overflow-hidden shadow-2xl p-6 sm:p-8 flex flex-col justify-between min-h-[440px] sm:min-h-[480px] transition-all duration-300 hover:border-white/20 hover:shadow-[0_16px_48px_rgba(0,0,0,0.7)]"
+              className="group relative rounded-3xl border border-white/10 bg-[#090a0f] overflow-hidden shadow-2xl p-6 sm:p-8 flex flex-col justify-between min-h-[460px] sm:min-h-[500px] transition-all duration-300 hover:border-white/20 hover:shadow-[0_16px_48px_rgba(0,0,0,0.7)]"
             >
               {/* Background Image */}
               <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -110,28 +115,45 @@ export function BuildChooser() {
                     <span>{project.category}</span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-3">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4">
                     {project.name}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-5">
-                    {project.description}
-                  </p>
-
-                  {/* Technologies Used */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-1 rounded-md bg-white/[0.08] border border-white/10 text-[10.5px] sm:text-xs font-mono text-white/85"
-                      >
-                        {tech}
+                  {/* 4-Part Narrative Format */}
+                  <div className="space-y-3.5 mb-6 text-xs sm:text-sm leading-relaxed">
+                    <div>
+                      <span className="font-semibold text-[#74f5ff] uppercase tracking-wider text-[10.5px] block mb-1">
+                        Challenge
                       </span>
-                    ))}
+                      <p className="text-white/75">{project.challenge}</p>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-[#74f5ff] uppercase tracking-wider text-[10.5px] block mb-1">
+                        Solution
+                      </span>
+                      <p className="text-white/75">{project.solution}</p>
+                    </div>
+                  </div>
+
+                  {/* Technology Section */}
+                  <div className="mb-6">
+                    <span className="font-semibold text-white/90 uppercase tracking-wider text-[10.5px] block mb-2">
+                      Technology
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 rounded-md bg-white/[0.08] border border-white/10 text-[10.5px] sm:text-xs font-mono text-white/85"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Visit Button */}
+                {/* Result / Live Product Button */}
                 <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
                   <a
                     href={project.url}
@@ -139,7 +161,7 @@ export function BuildChooser() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.08] border border-white/15 text-white font-semibold text-xs sm:text-sm hover:bg-white/[0.15] hover:border-white/30 transition-all group/btn cursor-pointer"
                   >
-                    <span>Visit Website</span>
+                    <span>Visit Live Website</span>
                     <ArrowUpRight className="h-4 w-4 text-white/80 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </a>
 

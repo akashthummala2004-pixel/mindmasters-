@@ -18,10 +18,10 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    tag: "Design studio for AI, SaaS & Tech",
-    title: ["Meet your new AI", "Design Agency"],
+    tag: "AI, Web & Mobile Engineering",
+    title: ["We Build AI Products That", "Move Your Business Forward"],
     description:
-      "We collaborate with forward-thinking teams to create unique brands, launch intelligent products, and grow with intention.",
+      "From AI agents and automation to web and mobile applications, we design, build and deploy production-ready digital products.",
   },
   {
     tag: "Speed to market",
@@ -63,9 +63,8 @@ export function AgencyHero() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-[#0a0a0f]/80" />
       </div>
 
-      {/* ── Foreground content ─────────────────────────────────────────── */}
-      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 text-center flex flex-col items-center sm:translate-y-12">
-        {/* Rotating slide: reason tag + headline + subtext */}
+      <div className="container-x relative z-10 mx-auto max-w-5xl text-center flex flex-col items-center">
+        {/* Animated Slide Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -104,7 +103,7 @@ export function AgencyHero() {
         </AnimatePresence>
 
         {/* CTA — stays fixed across slides */}
-        <div className="mt-7 sm:mt-10 flex">
+        <div className="mt-7 sm:mt-10 flex flex-col items-center gap-3.5">
           <Link
             to="/schedule"
             className="group relative inline-flex items-center gap-2 rounded-full bg-[#12141c] text-white text-[14px] sm:text-[15px] font-medium px-6 sm:px-7 py-3 sm:py-3.5 ring-1 ring-white/10 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset,0_12px_30px_-12px_rgba(0,0,0,0.9)] hover:ring-white/25 hover:bg-[#1a1c24] hover:-translate-y-0.5 transition-all duration-300"
@@ -112,6 +111,14 @@ export function AgencyHero() {
             <span className="relative">Schedule a 1:1 Meeting</span>
             <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2.4} />
           </Link>
+
+          {/* Compact trust line */}
+          <p className="text-[11px] sm:text-[12.5px] font-mono tracking-wider text-white/40 uppercase text-center mt-1">
+            AI • Web • Mobile • Automation • Cloud{" "}
+            <span className="normal-case text-white/50 font-sans tracking-normal ml-1">
+              — Built for startups and growing businesses.
+            </span>
+          </p>
         </div>
 
         {/* Progress bars + counter */}
