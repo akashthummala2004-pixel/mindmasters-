@@ -12,5 +12,8 @@ export default defineConfig({
   },
   vite: {
     plugins: isVercel ? [nitro({ preset: "vercel" })] : [],
+    ssr: {
+      noExternal: ["@tanstack/react-query", "@tanstack/query-core"],
+    },
   },
 });
