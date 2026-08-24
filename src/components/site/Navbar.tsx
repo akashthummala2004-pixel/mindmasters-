@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { useCalModal } from "@/components/site/CalModalContext";
 
 import companyLogo from "@/assets/companylogo.png";
 
@@ -23,6 +24,7 @@ const links: NavLink[] = [
 ];
 
 export function Navbar() {
+  const { openCalModal } = useCalModal();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string | null>(null);
@@ -116,8 +118,9 @@ export function Navbar() {
 
           {/* CTA — RIGHT (Rounded Pill Button) */}
           <div className="flex items-center gap-2 shrink-0">
-            <Link
-              to="/schedule"
+            <button
+              type="button"
+              onClick={() => openCalModal()}
               className="hidden sm:inline-flex group items-center gap-2 rounded-full bg-gradient-to-b from-[#1c1d24] via-[#14151b] to-[#0c0d10] border border-white/15 text-white text-[13.5px] lg:text-[14px] font-medium px-5 lg:px-6 py-2 shadow-[0_4px_20px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.12)] hover:border-white/25 transition-all cursor-pointer"
             >
               <span>Schedule a 1:1 Meeting</span>
@@ -125,7 +128,7 @@ export function Navbar() {
                 className="h-3.5 w-3.5 text-white/90 transition-transform group-hover:translate-x-0.5"
                 strokeWidth={2.2}
               />
-            </Link>
+            </button>
 
             {/* Mobile menu toggle */}
             <button
@@ -186,14 +189,17 @@ export function Navbar() {
                 ))}
               </div>
 
-              <Link
-                to="/schedule"
-                onClick={() => setOpen(false)}
-                className="mt-3 flex items-center justify-center gap-2 w-full rounded-full bg-gradient-to-b from-[#1c1d24] via-[#14151b] to-[#0c0d10] border border-white/15 text-white text-sm font-medium px-4 py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:bg-[#14171f] transition-all"
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openCalModal();
+                }}
+                className="mt-3 flex items-center justify-center gap-2 w-full rounded-full bg-gradient-to-b from-[#1c1d24] via-[#14151b] to-[#0c0d10] border border-white/15 text-white text-sm font-medium px-4 py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:bg-[#14171f] transition-all cursor-pointer"
               >
                 <span>Schedule a 1:1 Meeting</span>
                 <ArrowRight className="h-4 w-4" strokeWidth={2.4} />
-              </Link>
+              </button>
             </motion.div>
           </>
         )}

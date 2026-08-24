@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { useCalModal } from "@/components/site/CalModalContext";
 import { smoothViewport } from "@/lib/motion-presets";
 
 export function DiscussCTA() {
+  const { openCalModal } = useCalModal();
   return (
     <section id="discuss" className="relative section-y container-x overflow-hidden bg-black">
       {/* dotted backdrop */}
@@ -84,16 +85,17 @@ export function DiscussCTA() {
           {" "}Starting?
         </h2>
 
-        <Link
-          to="/schedule"
-          className="group mt-7 sm:mt-9 inline-flex items-center gap-2 rounded-full bg-black ring-1 ring-white/15 px-5 sm:px-6 py-2.5 sm:py-3 text-[13.5px] sm:text-[14px] font-semibold text-white transition-colors hover:bg-[#0f1218] hover:ring-white/25 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)]"
+        <button
+          type="button"
+          onClick={() => openCalModal()}
+          className="group mt-7 sm:mt-9 inline-flex items-center gap-2 rounded-full bg-black ring-1 ring-white/15 px-5 sm:px-6 py-2.5 sm:py-3 text-[13.5px] sm:text-[14px] font-semibold text-white transition-colors hover:bg-[#0f1218] hover:ring-white/25 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.8)] cursor-pointer"
         >
           Schedule a 1:1 Meeting
           <ArrowRight
             className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
             strokeWidth={2.2}
           />
-        </Link>
+        </button>
       </motion.div>
     </section>
   );

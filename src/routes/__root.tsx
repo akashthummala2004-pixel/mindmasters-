@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
+import { CalModalProvider } from "@/components/site/CalModalContext";
 
 const themeInitScript = `document.documentElement.style.colorScheme='dark';document.documentElement.style.background='#06070b';`;
 
@@ -152,7 +153,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <CalModalProvider>
+        <Outlet />
+      </CalModalProvider>
     </QueryClientProvider>
   );
 }

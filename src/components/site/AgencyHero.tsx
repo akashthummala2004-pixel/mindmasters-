@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { useCalModal } from "@/components/site/CalModalContext";
 import { ShapeLandingBackground } from "@/components/ui/shape-landing-hero";
 
 // How long each slide stays on screen before auto-advancing (ms).
@@ -38,6 +39,7 @@ const SLIDES: Slide[] = [
 ];
 
 export function AgencyHero() {
+  const { openCalModal } = useCalModal();
   const [index, setIndex] = useState(0);
   const slide = SLIDES[index];
 
@@ -104,13 +106,14 @@ export function AgencyHero() {
 
         {/* CTA — stays fixed across slides */}
         <div className="mt-7 sm:mt-10 flex flex-col items-center gap-3.5">
-          <Link
-            to="/schedule"
-            className="group relative inline-flex items-center gap-2 rounded-full bg-[#12141c] text-white text-[14px] sm:text-[15px] font-medium px-6 sm:px-7 py-3 sm:py-3.5 ring-1 ring-white/10 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset,0_12px_30px_-12px_rgba(0,0,0,0.9)] hover:ring-white/25 hover:bg-[#1a1c24] hover:-translate-y-0.5 transition-all duration-300"
+          <button
+            type="button"
+            onClick={() => openCalModal()}
+            className="group relative inline-flex items-center gap-2 rounded-full bg-[#12141c] text-white text-[14px] sm:text-[15px] font-medium px-6 sm:px-7 py-3 sm:py-3.5 ring-1 ring-white/10 shadow-[0_1px_0_rgba(255,255,255,0.08)_inset,0_12px_30px_-12px_rgba(0,0,0,0.9)] hover:ring-white/25 hover:bg-[#1a1c24] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
           >
             <span className="relative">Schedule a 1:1 Meeting</span>
             <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2.4} />
-          </Link>
+          </button>
 
           {/* Compact trust line */}
           <p className="text-[11px] sm:text-[12.5px] font-mono tracking-wider text-white/40 uppercase text-center mt-1">
