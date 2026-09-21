@@ -11,8 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AiAgentsAutomationRouteImport } from './routes/ai-agents-automation'
+import { Route as AiMlSolutionsRouteImport } from './routes/ai-ml-solutions'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CustomSoftwareDevelopmentRouteImport } from './routes/custom-software-development'
+import { Route as MobileAppDevelopmentRouteImport } from './routes/mobile-app-development'
+import { Route as SaasDevelopmentRouteImport } from './routes/saas-development'
 import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as WebApplicationDevelopmentRouteImport } from './routes/web-application-development'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -24,9 +30,35 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiAgentsAutomationRoute = AiAgentsAutomationRouteImport.update({
+  id: '/ai-agents-automation',
+  path: '/ai-agents-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiMlSolutionsRoute = AiMlSolutionsRouteImport.update({
+  id: '/ai-ml-solutions',
+  path: '/ai-ml-solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomSoftwareDevelopmentRoute =
+  CustomSoftwareDevelopmentRouteImport.update({
+    id: '/custom-software-development',
+    path: '/custom-software-development',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MobileAppDevelopmentRoute = MobileAppDevelopmentRouteImport.update({
+  id: '/mobile-app-development',
+  path: '/mobile-app-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SaasDevelopmentRoute = SaasDevelopmentRouteImport.update({
+  id: '/saas-development',
+  path: '/saas-development',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ScheduleRoute = ScheduleRouteImport.update({
@@ -34,39 +66,100 @@ const ScheduleRoute = ScheduleRouteImport.update({
   path: '/schedule',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WebApplicationDevelopmentRoute =
+  WebApplicationDevelopmentRouteImport.update({
+    id: '/web-application-development',
+    path: '/web-application-development',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-agents-automation': typeof AiAgentsAutomationRoute
+  '/ai-ml-solutions': typeof AiMlSolutionsRoute
   '/contact': typeof ContactRoute
+  '/custom-software-development': typeof CustomSoftwareDevelopmentRoute
+  '/mobile-app-development': typeof MobileAppDevelopmentRoute
+  '/saas-development': typeof SaasDevelopmentRoute
   '/schedule': typeof ScheduleRoute
+  '/web-application-development': typeof WebApplicationDevelopmentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-agents-automation': typeof AiAgentsAutomationRoute
+  '/ai-ml-solutions': typeof AiMlSolutionsRoute
   '/contact': typeof ContactRoute
+  '/custom-software-development': typeof CustomSoftwareDevelopmentRoute
+  '/mobile-app-development': typeof MobileAppDevelopmentRoute
+  '/saas-development': typeof SaasDevelopmentRoute
   '/schedule': typeof ScheduleRoute
+  '/web-application-development': typeof WebApplicationDevelopmentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-agents-automation': typeof AiAgentsAutomationRoute
+  '/ai-ml-solutions': typeof AiMlSolutionsRoute
   '/contact': typeof ContactRoute
+  '/custom-software-development': typeof CustomSoftwareDevelopmentRoute
+  '/mobile-app-development': typeof MobileAppDevelopmentRoute
+  '/saas-development': typeof SaasDevelopmentRoute
   '/schedule': typeof ScheduleRoute
+  '/web-application-development': typeof WebApplicationDevelopmentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/schedule'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/ai-agents-automation'
+    | '/ai-ml-solutions'
+    | '/contact'
+    | '/custom-software-development'
+    | '/mobile-app-development'
+    | '/saas-development'
+    | '/schedule'
+    | '/web-application-development'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/schedule'
-  id: '__root__' | '/' | '/about' | '/contact' | '/schedule'
+  to:
+    | '/'
+    | '/about'
+    | '/ai-agents-automation'
+    | '/ai-ml-solutions'
+    | '/contact'
+    | '/custom-software-development'
+    | '/mobile-app-development'
+    | '/saas-development'
+    | '/schedule'
+    | '/web-application-development'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ai-agents-automation'
+    | '/ai-ml-solutions'
+    | '/contact'
+    | '/custom-software-development'
+    | '/mobile-app-development'
+    | '/saas-development'
+    | '/schedule'
+    | '/web-application-development'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AiAgentsAutomationRoute: typeof AiAgentsAutomationRoute
+  AiMlSolutionsRoute: typeof AiMlSolutionsRoute
   ContactRoute: typeof ContactRoute
+  CustomSoftwareDevelopmentRoute: typeof CustomSoftwareDevelopmentRoute
+  MobileAppDevelopmentRoute: typeof MobileAppDevelopmentRoute
+  SaasDevelopmentRoute: typeof SaasDevelopmentRoute
   ScheduleRoute: typeof ScheduleRoute
+  WebApplicationDevelopmentRoute: typeof WebApplicationDevelopmentRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -85,11 +178,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-agents-automation': {
+      id: '/ai-agents-automation'
+      path: '/ai-agents-automation'
+      fullPath: '/ai-agents-automation'
+      preLoaderRoute: typeof AiAgentsAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-ml-solutions': {
+      id: '/ai-ml-solutions'
+      path: '/ai-ml-solutions'
+      fullPath: '/ai-ml-solutions'
+      preLoaderRoute: typeof AiMlSolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/custom-software-development': {
+      id: '/custom-software-development'
+      path: '/custom-software-development'
+      fullPath: '/custom-software-development'
+      preLoaderRoute: typeof CustomSoftwareDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mobile-app-development': {
+      id: '/mobile-app-development'
+      path: '/mobile-app-development'
+      fullPath: '/mobile-app-development'
+      preLoaderRoute: typeof MobileAppDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/saas-development': {
+      id: '/saas-development'
+      path: '/saas-development'
+      fullPath: '/saas-development'
+      preLoaderRoute: typeof SaasDevelopmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/schedule': {
@@ -99,14 +227,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScheduleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/web-application-development': {
+      id: '/web-application-development'
+      path: '/web-application-development'
+      fullPath: '/web-application-development'
+      preLoaderRoute: typeof WebApplicationDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AiAgentsAutomationRoute: AiAgentsAutomationRoute,
+  AiMlSolutionsRoute: AiMlSolutionsRoute,
   ContactRoute: ContactRoute,
+  CustomSoftwareDevelopmentRoute: CustomSoftwareDevelopmentRoute,
+  MobileAppDevelopmentRoute: MobileAppDevelopmentRoute,
+  SaasDevelopmentRoute: SaasDevelopmentRoute,
   ScheduleRoute: ScheduleRoute,
+  WebApplicationDevelopmentRoute: WebApplicationDevelopmentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

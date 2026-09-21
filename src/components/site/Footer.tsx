@@ -2,16 +2,27 @@ import { Linkedin, Twitter } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import companyLogo from "@/assets/companylogo.png";
 
-const columns = [
+type FooterLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+type FooterColumn = {
+  title: string;
+  links: FooterLink[];
+};
+
+const columns: FooterColumn[] = [
   {
-    title: "Explore",
+    title: "Services",
     links: [
-      { label: "Services", href: "/#services" },
-      { label: "AI Voice Agent", href: "https://cold-call-demo.mindmastersai.services/static/index.html", external: true },
-      { label: "How It Works", href: "/#process" },
-      { label: "Portfolio", href: "/#initialize" },
-      { label: "Schedule a Meeting", href: "/#discuss" },
-      { label: "FAQ", href: "/#faq" },
+      { label: "AI Agents & Automation", href: "/ai-agents-automation" },
+      { label: "AI/ML Solutions", href: "/ai-ml-solutions" },
+      { label: "Web App Development", href: "/web-application-development" },
+      { label: "Mobile App Development", href: "/mobile-app-development" },
+      { label: "SaaS Development", href: "/saas-development" },
+      { label: "Custom Software", href: "/custom-software-development" },
     ],
   },
   {
@@ -33,11 +44,11 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-x-5 gap-y-8 sm:gap-10">
-          <div className="col-span-2 md:col-span-5">
+          <div className="col-span-2 md:col-span-4">
             <Link to="/" className="flex items-center gap-2.5 group cursor-pointer">
               <img
                 src={companyLogo}
-                alt="Mind Masters AI"
+                alt="Mind Masters AI Solutions Logo"
                 width={1536}
                 height={1024}
                 loading="lazy"
@@ -51,24 +62,37 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 sm:mt-4 max-w-sm text-[12.5px] sm:text-sm text-white/55 leading-[1.55] sm:leading-relaxed text-pretty">
-              Web, mobile and AI products engineered with purpose. From idea to scalable product.
+              AI agents, web apps, mobile apps, SaaS platforms, and custom software engineered with purpose.
             </p>
             <div className="mt-4 sm:mt-5 flex items-center gap-2">
-              {[Twitter, Linkedin].map((Icon, i) => (
+              {[
+                {
+                  name: "LinkedIn",
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/company/mind-masters-ai-solutions-pvt-ltd/",
+                },
+                {
+                  name: "Twitter",
+                  icon: Twitter,
+                  href: "https://x.com",
+                },
+              ].map((item) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full glass text-white/65 hover:text-white hover:border-white/20 transition-colors tap-press"
-                  aria-label="social link"
+                  aria-label={item.name}
                 >
-                  <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:-translate-y-0.5" strokeWidth={2} />
+                  <item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:-translate-y-0.5" strokeWidth={2} />
                 </a>
               ))}
             </div>
           </div>
 
           {columns.map((col) => (
-            <div key={col.title} className="md:col-span-2">
+            <div key={col.title} className="md:col-span-3">
               <div className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45">
                 {col.title}
               </div>

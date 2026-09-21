@@ -11,6 +11,7 @@ type Service = {
   num: string;
   title: string;
   desc: string;
+  href: string;
   icon: LucideIcon;
   features: string[];
   image: string;
@@ -20,48 +21,63 @@ type Service = {
 const services: Service[] = [
   {
     num: "01",
-    title: "AI Development & Products",
-    desc: "Production-grade AI ecosystems, custom LLM fine-tuning, autonomous agents, and multi-tenant SaaS infrastructure.",
-    icon: Cpu,
-    features: ["Custom LLM Integration", "Autonomous Agents", "RAG & Vector Pipelines", "Sub-15ms Latency"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=1200&auto=format&fit=crop",
-    alt: "AI Development and Machine Learning Infrastructure",
+    title: "AI Agents & Automation",
+    desc: "Autonomous AI agents, voice assistants, self-learning chatbots, and multi-tool workflow pipelines built for scale.",
+    href: "/ai-agents-automation",
+    icon: Bot,
+    features: ["Autonomous AI Agents", "AI Voice Call Agents", "Workflow Automation", "RAG Knowledge Base"],
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
+    alt: "AI Agents and Voice Call Automation Solution by Mind Masters AI Solutions",
   },
   {
     num: "02",
-    title: "Web Applications & SaaS",
-    desc: "Powerful, scalable, and secure web applications built with modern frontend architectures and high-performance backends.",
-    icon: Globe,
-    features: ["Modern React & Next.js Stacks", "Real-Time WebSockets", "High-Performance APIs", "Edge CDN Deployments"],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
-    alt: "Web Application Development and Cloud Platforms",
+    title: "AI/ML Solutions",
+    desc: "Bespoke machine learning models, predictive analytics, generative AI fine-tuning, and computer vision systems.",
+    href: "/ai-ml-solutions",
+    icon: Cpu,
+    features: ["Custom Model Training", "Predictive Analytics", "Computer Vision OCR", "Enterprise MLOps"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=1200&auto=format&fit=crop",
+    alt: "AI and Machine Learning Infrastructure by Mind Masters AI Solutions",
   },
   {
     num: "03",
-    title: "Mobile Applications",
-    desc: "Silky-smooth cross-platform and native mobile applications for iOS and Android designed for high conversion.",
-    icon: Smartphone,
-    features: ["Native iOS & Android Code", "Biometric Authentication", "Offline-First Sync", "Smooth 60FPS UI"],
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop",
-    alt: "Mobile App Development for iOS and Android",
+    title: "Web Application Development",
+    desc: "High-performance web applications, customer portals, and cloud platforms engineered with React and Next.js.",
+    href: "/web-application-development",
+    icon: Globe,
+    features: ["React & Next.js Stacks", "Enterprise Web Portals", "High-Throughput APIs", "PWA Applications"],
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
+    alt: "Web Application Development Platform by Mind Masters AI Solutions",
   },
   {
     num: "04",
-    title: "AI Automation & Voice Agents",
-    desc: "Intelligent voice call agents and automated workflow pipelines that run 24/7 customer support and lead processing.",
-    icon: Bot,
-    features: ["Ultra Low-Latency Voice", "Inbound Call Routing", "Multi-Tool Integrations", "Self-Learning Guardrails"],
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
-    alt: "AI Voice Agents and Conversational Intelligence",
+    title: "Mobile App Development",
+    desc: "Native and cross-platform mobile apps for iOS and Android with 60FPS UIs, offline sync, and AI features.",
+    href: "/mobile-app-development",
+    icon: Smartphone,
+    features: ["iOS & Android Code", "React Native / Flutter", "Biometric Auth", "Offline Sync"],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop",
+    alt: "Mobile App Development for iOS and Android by Mind Masters AI Solutions",
   },
   {
     num: "05",
-    title: "UI/UX Design & Strategy",
-    desc: "High-converting digital product interfaces, design systems, and interactive prototypes crafted to delight users.",
+    title: "SaaS Development",
+    desc: "End-to-end SaaS products with multi-tenant architecture, Stripe subscription billing, and embedded AI tools.",
+    href: "/saas-development",
+    icon: Cloud,
+    features: ["Multi-Tenant Architecture", "Subscription Billing", "Workspace RBAC", "Rapid MVP Launch"],
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+    alt: "SaaS Application Development Platform by Mind Masters AI Solutions",
+  },
+  {
+    num: "06",
+    title: "Custom Software Development",
+    desc: "Tailored enterprise software, microservices APIs, monolith modernizations, and back-office automation.",
+    href: "/custom-software-development",
     icon: Layers,
-    features: ["Conversion-Focused UX", "Design Systems & Motion", "Interactive WebGL Visuals", "Accessibility Baked In"],
+    features: ["Bespoke Business Logic", "API Integration Layer", "Legacy Modernization", "Full IP Ownership"],
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200&auto=format&fit=crop",
-    alt: "UI UX Design and Product Interface Design",
+    alt: "Custom Software Development and System Integration by Mind Masters AI Solutions",
   },
 ];
 
@@ -136,21 +152,21 @@ export function ServicesProvided() {
             className="text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.2em]"
             style={{ color: CYAN }}
           >
-            Our Expertise
+            Our Core Expertise
           </span>
           <h2 className="main-section-heading text-white text-balance mt-2.5">
-            Services We Provide
+            AI & Software Services We Provide
           </h2>
           <span
             className="mt-3 block h-[2.5px] w-12 rounded-full"
             style={{ background: "linear-gradient(90deg, #00f2ff, #a78bfa)" }}
           />
           <p className="mt-3.5 max-w-lg text-[13.5px] sm:text-[15px] text-white/65 leading-relaxed">
-            We build robust digital products, AI systems, and scalable platforms through collaborative development.
+            From autonomous AI agents and machine learning to custom web, mobile, SaaS, and enterprise software.
           </p>
         </div>
 
-        {/* Compact, Equal-Sized 3-Column Service Grid */}
+        {/* 6-Service Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {services.map((s) => {
             const Icon = s.icon;
@@ -205,10 +221,10 @@ export function ServicesProvided() {
                   </div>
 
                   <Link
-                    to="/schedule"
+                    to={s.href as any}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#74f5ff] uppercase tracking-wider group/link hover:underline pt-2.5 border-t border-white/[0.08]"
                   >
-                    <span>Learn More</span>
+                    <span>View Service Details</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1" strokeWidth={2} />
                   </Link>
                 </div>
@@ -220,3 +236,4 @@ export function ServicesProvided() {
     </section>
   );
 }
+

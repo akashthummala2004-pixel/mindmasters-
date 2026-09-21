@@ -16,21 +16,48 @@ import { AboutTeam } from "@/components/site/AboutTeam";
 import { DiscussCTA } from "@/components/site/DiscussCTA";
 import { AboutTrustedBy } from "@/components/site/AboutTrustedBy";
 
+import { createBreadcrumbSchema, SITE_URL, COMPANY_NAME } from "@/lib/seo-schemas";
+
+const aboutBreadcrumb = createBreadcrumbSchema([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "About Us", url: `${SITE_URL}/about` },
+]);
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Mind Masters AI Solutions" },
+      { title: `About ${COMPANY_NAME} | AI & Software Engineering Studio` },
       {
         name: "description",
         content:
-          "Design studio for AI, SaaS & tech startups. We design delightful experiences that make life simpler and more enjoyable.",
+          "Learn about Mind Masters AI Solutions Pvt Ltd — an engineering and design studio delivering production-grade AI agents, SaaS apps, and enterprise software.",
       },
-      { property: "og:title", content: "About — Mind Masters AI Solutions" },
+      {
+        name: "keywords",
+        content:
+          "about Mind Masters AI, AI engineering studio, software development agency, AI team, custom software engineers",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: `About ${COMPANY_NAME} | AI & Software Engineering Studio` },
       {
         property: "og:description",
-        content: "Good design makes life better. We design delightful experiences that make life simpler and more enjoyable.",
+        content:
+          "Learn about Mind Masters AI Solutions Pvt Ltd — an engineering and design studio delivering production-grade AI agents, SaaS apps, and enterprise software.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/about` },
+      { property: "og:image", content: `${SITE_URL}/companylogo.png` },
+      { property: "og:site_name", content: COMPANY_NAME },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: `About ${COMPANY_NAME} | AI & Software Engineering Studio` },
+      {
+        name: "twitter:description",
+        content:
+          "Learn about Mind Masters AI Solutions Pvt Ltd — an engineering and design studio delivering production-grade AI agents, SaaS apps, and enterprise software.",
+      },
+      { name: "twitter:image", content: `${SITE_URL}/companylogo.png` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/about` }],
   }),
   component: AboutPage,
 });
@@ -67,6 +94,10 @@ function AboutPage() {
   return (
     <MotionConfig reducedMotion="user" transition={smoothTransition}>
       <div className="relative min-h-screen text-foreground bg-background">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumb) }}
+        />
         <MouseGlow />
         <Navbar />
 

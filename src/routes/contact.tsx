@@ -9,16 +9,48 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { MobileBottomNav } from "@/components/site/MobileBottomNav";
 import { ContactSection } from "@/components/site/ContactSection";
 
+import { createBreadcrumbSchema, SITE_URL, COMPANY_NAME } from "@/lib/seo-schemas";
+
+const contactBreadcrumb = createBreadcrumbSchema([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Contact Us", url: `${SITE_URL}/contact` },
+]);
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Mind Masters AI Solutions" },
+      { title: `Contact Us | AI & Software Engineering Services | ${COMPANY_NAME}` },
       {
         name: "description",
         content:
-          "Get in touch with us to build something amazing together.",
+          "Get in touch with Mind Masters AI Solutions Pvt Ltd. Discuss your AI, web application, mobile app, SaaS, or custom software development project with our engineers.",
       },
+      {
+        name: "keywords",
+        content:
+          "contact Mind Masters AI, hire AI developers, software development inquiry, AI automation quote, contact software agency",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: `Contact Us | AI & Software Engineering Services | ${COMPANY_NAME}` },
+      {
+        property: "og:description",
+        content:
+          "Get in touch with Mind Masters AI Solutions Pvt Ltd. Discuss your AI, web application, mobile app, SaaS, or custom software development project with our engineers.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/contact` },
+      { property: "og:image", content: `${SITE_URL}/companylogo.png` },
+      { property: "og:site_name", content: COMPANY_NAME },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: `Contact Us | AI & Software Engineering Services | ${COMPANY_NAME}` },
+      {
+        name: "twitter:description",
+        content:
+          "Get in touch with Mind Masters AI Solutions Pvt Ltd. Discuss your AI, web application, mobile app, SaaS, or custom software development project with our engineers.",
+      },
+      { name: "twitter:image", content: `${SITE_URL}/companylogo.png` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/contact` }],
   }),
   component: ContactPage,
 });
@@ -27,6 +59,10 @@ function ContactPage() {
   return (
     <MotionConfig reducedMotion="user" transition={smoothTransition}>
       <div className="relative min-h-screen text-foreground bg-background">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumb) }}
+        />
         <MouseGlow />
         <Navbar />
 

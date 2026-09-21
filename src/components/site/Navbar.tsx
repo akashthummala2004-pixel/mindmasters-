@@ -16,11 +16,6 @@ const links: NavLink[] = [
   { href: "/#services", label: "Services" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact" },
-  {
-    href: "https://cold-call-demo.mindmastersai.services/static/index.html",
-    label: "AI Voice Agent",
-    external: true,
-  },
 ];
 
 export function Navbar() {

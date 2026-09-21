@@ -25,13 +25,27 @@ export function Contact() {
           </div>
         </div>
         <div className="mt-8 flex gap-2">
-          {[Twitter, Linkedin].map((Icon, i) => (
+          {[
+            {
+              name: "LinkedIn",
+              icon: Linkedin,
+              href: "https://www.linkedin.com/company/mind-masters-ai-solutions-pvt-ltd/",
+            },
+            {
+              name: "Twitter",
+              icon: Twitter,
+              href: "https://x.com",
+            },
+          ].map((item) => (
             <a
-              key={i}
-              href="#"
+              key={item.name}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={item.name}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full glass hover:glow-cyan transition"
             >
-              <Icon className="h-4 w-4" strokeWidth={1.5} />
+              <item.icon className="h-4 w-4" strokeWidth={1.5} />
             </a>
           ))}
         </div>

@@ -14,16 +14,48 @@ import { WebGLBoundary } from "@/components/site/WebGLBoundary";
 import contactImage from "@/assets/contact.png";
 import companyLogo from "@/assets/companylogo.png";
 
+import { createBreadcrumbSchema, SITE_URL, COMPANY_NAME } from "@/lib/seo-schemas";
+
+const scheduleBreadcrumb = createBreadcrumbSchema([
+  { name: "Home", url: `${SITE_URL}/` },
+  { name: "Schedule Consultation", url: `${SITE_URL}/schedule` },
+]);
+
 export const Route = createFileRoute("/schedule")({
   head: () => ({
     meta: [
-      { title: "Schedule a 1:1 Meeting — Mind Masters AI Solutions" },
+      { title: `Book 1:1 Consultation | AI & Software Solutions | ${COMPANY_NAME}` },
       {
         name: "description",
         content:
-          "Book a free 1:1 consultation with our team to discuss your project, timeline, and budget.",
+          "Schedule a 1:1 technical strategy session with Mind Masters AI Solutions Pvt Ltd to evaluate your project scope, AI architecture, timeline, and budget.",
       },
+      {
+        name: "keywords",
+        content:
+          "book AI consultation, schedule software meeting, AI project strategy session, hire software engineers consultation",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: `Book 1:1 Consultation | AI & Software Solutions | ${COMPANY_NAME}` },
+      {
+        property: "og:description",
+        content:
+          "Schedule a 1:1 technical strategy session with Mind Masters AI Solutions Pvt Ltd to evaluate your project scope, AI architecture, timeline, and budget.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/schedule` },
+      { property: "og:image", content: `${SITE_URL}/companylogo.png` },
+      { property: "og:site_name", content: COMPANY_NAME },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: `Book 1:1 Consultation | AI & Software Solutions | ${COMPANY_NAME}` },
+      {
+        name: "twitter:description",
+        content:
+          "Schedule a 1:1 technical strategy session with Mind Masters AI Solutions Pvt Ltd to evaluate your project scope, AI architecture, timeline, and budget.",
+      },
+      { name: "twitter:image", content: `${SITE_URL}/companylogo.png` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/schedule` }],
   }),
   component: SchedulePage,
 });
@@ -48,6 +80,10 @@ function SchedulePage() {
   return (
     <MotionConfig reducedMotion="user" transition={smoothTransition}>
       <div className="relative min-h-screen text-foreground bg-background">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(scheduleBreadcrumb) }}
+        />
         <MouseGlow />
         <Navbar />
 
