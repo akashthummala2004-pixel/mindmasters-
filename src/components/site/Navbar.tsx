@@ -16,6 +16,7 @@ const links: NavLink[] = [
   { href: "/#services", label: "Services" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact" },
+  { href: "/ai-voice-agent", label: "AI Voice Agent" },
 ];
 
 export function Navbar() {
@@ -92,7 +93,8 @@ export function Navbar() {
           {/* Desktop links — CENTER (Single Pill Container) */}
           <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-1.5 p-1.5 rounded-full bg-[#0d0e12]/85 border border-white/10 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)]">
             {links.map((l) => {
-              const isActive = !l.external && active === l.href;
+              const currentPath = typeof window !== "undefined" ? window.location.pathname : "";
+              const isActive = !l.external && (active === l.href || currentPath === l.href);
               return (
                 <a
                   key={l.href}

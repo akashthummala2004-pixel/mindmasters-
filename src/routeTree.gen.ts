@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiAgentsAutomationRouteImport } from './routes/ai-agents-automation'
 import { Route as AiMlSolutionsRouteImport } from './routes/ai-ml-solutions'
+import { Route as AiVoiceAgentRouteImport } from './routes/ai-voice-agent'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CustomSoftwareDevelopmentRouteImport } from './routes/custom-software-development'
 import { Route as MobileAppDevelopmentRouteImport } from './routes/mobile-app-development'
@@ -38,6 +39,11 @@ const AiAgentsAutomationRoute = AiAgentsAutomationRouteImport.update({
 const AiMlSolutionsRoute = AiMlSolutionsRouteImport.update({
   id: '/ai-ml-solutions',
   path: '/ai-ml-solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiVoiceAgentRoute = AiVoiceAgentRouteImport.update({
+  id: '/ai-voice-agent',
+  path: '/ai-voice-agent',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/ai-agents-automation': typeof AiAgentsAutomationRoute
   '/ai-ml-solutions': typeof AiMlSolutionsRoute
+  '/ai-voice-agent': typeof AiVoiceAgentRoute
   '/contact': typeof ContactRoute
   '/custom-software-development': typeof CustomSoftwareDevelopmentRoute
   '/mobile-app-development': typeof MobileAppDevelopmentRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ai-agents-automation': typeof AiAgentsAutomationRoute
   '/ai-ml-solutions': typeof AiMlSolutionsRoute
+  '/ai-voice-agent': typeof AiVoiceAgentRoute
   '/contact': typeof ContactRoute
   '/custom-software-development': typeof CustomSoftwareDevelopmentRoute
   '/mobile-app-development': typeof MobileAppDevelopmentRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ai-agents-automation': typeof AiAgentsAutomationRoute
   '/ai-ml-solutions': typeof AiMlSolutionsRoute
+  '/ai-voice-agent': typeof AiVoiceAgentRoute
   '/contact': typeof ContactRoute
   '/custom-software-development': typeof CustomSoftwareDevelopmentRoute
   '/mobile-app-development': typeof MobileAppDevelopmentRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-agents-automation'
     | '/ai-ml-solutions'
+    | '/ai-voice-agent'
     | '/contact'
     | '/custom-software-development'
     | '/mobile-app-development'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-agents-automation'
     | '/ai-ml-solutions'
+    | '/ai-voice-agent'
     | '/contact'
     | '/custom-software-development'
     | '/mobile-app-development'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ai-agents-automation'
     | '/ai-ml-solutions'
+    | '/ai-voice-agent'
     | '/contact'
     | '/custom-software-development'
     | '/mobile-app-development'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AiAgentsAutomationRoute: typeof AiAgentsAutomationRoute
   AiMlSolutionsRoute: typeof AiMlSolutionsRoute
+  AiVoiceAgentRoute: typeof AiVoiceAgentRoute
   ContactRoute: typeof ContactRoute
   CustomSoftwareDevelopmentRoute: typeof CustomSoftwareDevelopmentRoute
   MobileAppDevelopmentRoute: typeof MobileAppDevelopmentRoute
@@ -190,6 +203,13 @@ declare module '@tanstack/react-router' {
       path: '/ai-ml-solutions'
       fullPath: '/ai-ml-solutions'
       preLoaderRoute: typeof AiMlSolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-voice-agent': {
+      id: '/ai-voice-agent'
+      path: '/ai-voice-agent'
+      fullPath: '/ai-voice-agent'
+      preLoaderRoute: typeof AiVoiceAgentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AiAgentsAutomationRoute: AiAgentsAutomationRoute,
   AiMlSolutionsRoute: AiMlSolutionsRoute,
+  AiVoiceAgentRoute: AiVoiceAgentRoute,
   ContactRoute: ContactRoute,
   CustomSoftwareDevelopmentRoute: CustomSoftwareDevelopmentRoute,
   MobileAppDevelopmentRoute: MobileAppDevelopmentRoute,
