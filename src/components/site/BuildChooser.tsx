@@ -68,7 +68,7 @@ const projects: Project[] = [
 
 export function BuildChooser() {
   return (
-    <section id="initialize" className="relative section-y container-x bg-[#06070b]">
+    <section id="initialize" className="relative section-y container-x bg-[#06070b] overflow-hidden">
       {/* Background Ambient Glow */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[50vw] max-w-[1000px] bg-[radial-gradient(ellipse_at_center,rgba(91,140,255,0.08),transparent_70%)] blur-[120px]" />

@@ -301,7 +301,7 @@ function AIVoiceAgentPage() {
 
         <main className="relative overflow-hidden bg-[#05070d] text-white pt-[72px] flex-1">
           {/* BACKGROUND */}
-          <div className="pointer-events-none absolute inset-0">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <div className="absolute -left-[200px] top-[80px] h-[700px] w-[700px] rounded-full bg-blue-700/[0.10] blur-[160px]" />
             <div className="absolute -right-[100px] top-[150px] h-[500px] w-[500px] rounded-full bg-orange-500/[0.035] blur-[150px]" />
 
@@ -615,7 +615,7 @@ function AIVoiceAgentPage() {
           {/* =======================================================
               SECTION 5 — USE CASES
           ======================================================= */}
-          <section className="relative px-6 py-24 border-t border-white/[0.05]">
+          <section className="relative px-6 py-24 border-t border-white/[0.05] overflow-hidden">
             <div className="pointer-events-none absolute right-[-200px] top-20 h-[500px] w-[500px] rounded-full bg-violet-600/[0.045] blur-[150px]" />
 
             <div className="relative mx-auto grid max-w-[1400px] gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">

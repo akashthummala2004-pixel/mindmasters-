@@ -10,7 +10,7 @@ export function FloatingChatbot() {
       initial={{ opacity: 0, y: 60, scale: 0.6 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 1.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed bottom-6 right-6 z-50 pointer-events-none"
+      className="hidden sm:block fixed bottom-6 right-6 z-50 pointer-events-none"
       aria-hidden="true"
     >
       <div

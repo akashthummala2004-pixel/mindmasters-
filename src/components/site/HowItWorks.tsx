@@ -50,7 +50,7 @@ export function HowItWorks() {
   const railScaleY = useTransform(scrollYProgress, [0.05, 0.85], [0, 1]);
 
   return (
-    <section id="process" className="relative section-y container-x bg-black">
+    <section id="process" className="relative section-y container-x bg-black overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
           className="absolute top-[8%] left-1/2 -translate-x-1/2 h-[55vw] w-[55vw] rounded-full"

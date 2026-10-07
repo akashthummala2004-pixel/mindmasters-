@@ -71,7 +71,7 @@ function ContactPage() {
 
         {/* The actual Contact Section from before */}
         <div className="pb-20 sm:pb-28">
-            <ContactSection />
+          <ContactSection />
         </div>
 
         <Footer />

@@ -11,7 +11,7 @@ const projects = [
 export function Showcase() {
   return (
     <div className="relative">
-      <div className="mx-auto max-w-7xl px-6 overflow-x-auto no-scrollbar">
+      <div className="mx-auto max-w-7xl px-6 overflow-x-auto overscroll-x-contain touch-pan-x touch-pan-y no-scrollbar">
         <div className="flex gap-5 pb-6 snap-x snap-mandatory">
           {projects.map((p, i) => (
             <motion.article

@@ -26,7 +26,7 @@ const features = [
 
 export function ProductDesign() {
   return (
-    <section id="services" className="relative section-y container-x">
+    <section id="services" className="relative section-y container-x overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-[10%] left-[-12%] h-[40vw] w-[40vw] rounded-full" style={{ background: "radial-gradient(circle, rgba(167,139,250,0.10), transparent 60%)", filter: "blur(110px)" }} />
       </div>

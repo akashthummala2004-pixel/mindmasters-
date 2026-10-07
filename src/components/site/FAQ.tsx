@@ -29,7 +29,7 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative section-y container-x bg-black">
+    <section id="faq" className="relative section-y container-x bg-black overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-[5%] right-[-10%] h-[40vw] w-[40vw] rounded-full" style={{ background: "radial-gradient(circle, rgba(91,140,255,0.08), transparent 60%)", filter: "blur(110px)" }} />
       </div>

@@ -57,7 +57,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative isolate section-y container-x">
+    <section id="contact" className="relative isolate section-y container-x overflow-hidden">
       {/* 3D Dotted Surface Background (Header only) */}
       <WebGLBoundary>
         <DottedSurface className="absolute inset-x-0 -top-16 md:-top-24 h-[400px] sm:h-[500px] -z-20 opacity-100 pointer-events-none mask-image-bottom" style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)' }} />

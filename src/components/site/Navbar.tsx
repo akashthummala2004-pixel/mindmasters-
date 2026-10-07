@@ -162,7 +162,7 @@ export function Navbar() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -12, opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="md:hidden fixed left-3 right-3 top-[72px] z-50 dock-glass rounded-3xl p-3 shadow-[0_20px_60px_rgb(0,0,0,0.5)] border border-white/10"
+              className="md:hidden fixed left-3 right-3 top-[72px] z-50 dock-glass rounded-3xl p-3 shadow-[0_20px_60px_rgb(0,0,0,0.5)] border border-white/10 max-h-[calc(100dvh-90px)] overflow-y-auto overscroll-contain"
             >
               <div className="flex flex-col gap-1">
                 {links.map((l, i) => (

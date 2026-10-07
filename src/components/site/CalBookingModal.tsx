@@ -65,7 +65,7 @@ export function CalBookingModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-4xl max-h-[90vh] h-[720px] rounded-3xl bg-[#090a0d] border border-white/15 shadow-[0_25px_70px_rgba(0,0,0,0.95)] flex flex-col overflow-hidden"
+            className="relative z-10 w-full max-w-4xl max-h-[90dvh] h-full sm:h-[720px] rounded-3xl bg-[#090a0d] border border-white/15 shadow-[0_25px_70px_rgba(0,0,0,0.95)] flex flex-col overflow-hidden"
           >
             {/* Modal Header */}
             <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 sm:py-4 border-b border-white/10 bg-[#0c0e14]">

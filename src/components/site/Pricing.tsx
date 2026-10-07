@@ -48,7 +48,7 @@ export function Pricing() {
   const sliderPct = ((pages - 1) / 29) * 100;
 
   return (
-    <section id="pricing" className="relative section-y container-x">
+    <section id="pricing" className="relative section-y container-x overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
           className="absolute top-[10%] right-[-15%] h-[55vw] w-[55vw] rounded-full"

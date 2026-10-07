@@ -15,9 +15,10 @@ export function useSmoothScroll() {
     // its scroll-lock puts `overflow: clip` on <html>, which can leave the page
     // unable to scroll on mobile. Since touch is already native (syncTouch:false),
     // Lenis only benefits mouse-wheel users — so skip it entirely on touch.
-    const isTouchPrimary = window.matchMedia(
-      "(hover: none) and (pointer: coarse)",
-    ).matches;
+    const isTouchPrimary =
+      window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0);
 
     let lenis: Lenis | null = null;
     let raf = 0;
