@@ -287,7 +287,7 @@ const GLSLHills = ({
   }, [cameraZ, planeSize, speed]);
 
   return (
-    <div className={className} ref={containerRef} style={{ width, height, position: 'absolute', inset: 0 }}>
+    <div className={className} ref={containerRef} style={{ width, height, position: 'absolute', inset: 0, pointerEvents: 'none' }}>
       {webglFailed ? (
         // Lightweight static stand-in for the animated hills (no GPU).
         <div
@@ -305,7 +305,8 @@ const GLSLHills = ({
           style={{
             width: '100%',
             height: '100%',
-            display: 'block'
+            display: 'block',
+            pointerEvents: 'none',
           }}
         />
       )}

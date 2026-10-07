@@ -98,6 +98,7 @@ export function HeroGlobe() {
       camera={{ position: [0, 0, 5], fov: 45 }}
       dpr={[1, 2]}
       gl={{ antialias: true, alpha: true }}
+      style={{ pointerEvents: "none" }}
     >
       <ambientLight intensity={0.4} />
       <pointLight position={[5, 5, 5]} intensity={2} color={"#5ee4ff"} />

@@ -269,7 +269,7 @@ export function GlowyWavesBackground() {
     <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-background">
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full pointer-events-none"
         aria-hidden="true"
       />
       

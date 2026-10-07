@@ -68,6 +68,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     };
     
     renderer.setClearColor(scene.fog.color, 0);
+    renderer.domElement.style.pointerEvents = 'none';
 
     container.appendChild(renderer.domElement);
 
