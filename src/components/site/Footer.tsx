@@ -121,10 +121,10 @@ export function Footer() {
             <ul className="mt-3 sm:mt-4 space-y-2 sm:space-y-2.5 text-[12.5px] sm:text-sm">
               <li>
                 <a
-                  href="mailto:mmaisolutions.pvt@gmail.com"
+                  href="mailto:business@mindmastersai.services"
                   className="text-white/65 hover:text-white transition-colors break-all"
                 >
-                  mmaisolutions.pvt@gmail.com
+                  business@mindmastersai.services
                 </a>
               </li>
               <li>

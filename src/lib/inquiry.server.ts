@@ -58,7 +58,7 @@ export const sendInquiry = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => InquirySchema.parse(input))
   .handler(async ({ data }) => {
     const apiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.INQUIRY_TO_EMAIL ?? "mmaisolutions.pvt@gmail.com";
+    const toEmail = process.env.INQUIRY_TO_EMAIL ?? "business@mindmastersai.services";
     const fromEmail = process.env.INQUIRY_FROM_EMAIL ?? "Mind Masters <onboarding@resend.dev>";
 
     if (!apiKey) {

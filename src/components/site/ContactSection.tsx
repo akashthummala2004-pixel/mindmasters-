@@ -222,7 +222,7 @@ export function ContactSection() {
             <div className="flex-1 p-5 sm:p-6 lg:p-8 border-b border-white/10 flex flex-col justify-center">
               <Mail className="h-4 w-4 text-white/60 mb-3" strokeWidth={1.5} />
               <div className="text-[13px] font-semibold text-white mb-1">Email</div>
-              <div className="text-[13px] text-white/55">mmaisolutions.pvt@gmail.com</div>
+              <div className="text-[13px] text-white/55">business@mindmastersai.services</div>
             </div>
 
             <div className="flex-1 p-5 sm:p-6 lg:p-8 flex flex-col justify-center">

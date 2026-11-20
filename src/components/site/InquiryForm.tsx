@@ -139,8 +139,8 @@ export function InquiryForm() {
             <div className="sm:col-span-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 pt-1 sm:pt-2">
               <p className="text-[12.5px] sm:text-[13px] text-white/50 order-2 sm:order-1 text-center sm:text-left">
                 Or email{" "}
-                <a href="mailto:mmaisolutions.pvt@gmail.com" className="text-[color:var(--brand)] hover:text-[color:var(--brand-hover)] underline underline-offset-4 decoration-[color:var(--brand)]/30 break-all">
-                  mmaisolutions.pvt@gmail.com
+                <a href="mailto:business@mindmastersai.services" className="text-[color:var(--brand)] hover:text-[color:var(--brand-hover)] underline underline-offset-4 decoration-[color:var(--brand)]/30 break-all">
+                  business@mindmastersai.services
                 </a>
               </p>
               <button

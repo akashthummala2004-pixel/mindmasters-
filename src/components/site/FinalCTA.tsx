@@ -40,17 +40,17 @@ export function FinalCTA() {
 
             <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 sm:gap-3">
               <a
-                href="mailto:mmaisolutions.pvt@gmail.com"
+                href="mailto:business@mindmastersai.services"
                 className="group inline-flex items-center gap-2 rounded-full bg-background px-5 sm:px-6 py-3 sm:py-3.5 text-sm font-semibold text-foreground transition hover:opacity-90"
               >
                 Schedule a 30 min call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <a
-                href="mailto:mmaisolutions.pvt@gmail.com"
+                href="mailto:business@mindmastersai.services"
                 className="inline-flex items-center gap-2 rounded-full border border-background/20 px-5 sm:px-6 py-3 sm:py-3.5 text-sm font-medium text-background hover:bg-background/10 transition"
               >
-                mmaisolutions.pvt@gmail.com
+                business@mindmastersai.services
               </a>
             </div>
           </div>

@@ -14,7 +14,7 @@ export const organizationSchema = {
   "image": DEFAULT_OG_IMAGE,
   "description":
     "Mind Masters AI Solutions provides AI agents, automation, AI/ML, web and mobile applications, SaaS, and custom software development services.",
-  "email": "mmaisolutions.pvt@gmail.com",
+  "email": "business@mindmastersai.services",
   "telephone": "+918500729621",
   "address": {
     "@type": "PostalAddress",
@@ -24,7 +24,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "contactType": "customer support",
     "telephone": "+918500729621",
-    "email": "mmaisolutions.pvt@gmail.com",
+    "email": "business@mindmastersai.services",
     "url": `${SITE_URL}/contact`,
     "availableLanguage": ["English"]
   },

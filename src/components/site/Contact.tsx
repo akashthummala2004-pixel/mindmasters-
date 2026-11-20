@@ -17,7 +17,7 @@ export function Contact() {
         <div className="mt-8 space-y-3 text-sm">
           <div className="flex items-center gap-3 text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-primary glow-cyan" />
-            mmaisolutions.pvt@gmail.com
+            business@mindmastersai.services
           </div>
           <div className="flex items-center gap-3 text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-accent glow-purple" />
