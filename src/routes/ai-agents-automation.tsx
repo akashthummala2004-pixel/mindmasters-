@@ -7,10 +7,10 @@ const config: ServicePageConfig = {
   serviceTitle: "AI Agents & Automation",
   h1Title: "AI Agents & Automation Services for Business Growth",
   metaDesc:
-    "Deploy autonomous AI agents, voice assistants, LLM workflows, and enterprise process automation solutions engineered by Mind Masters AI Solutions.",
+    "Deploy autonomous AI agents, LLM workflows, and enterprise process automation solutions engineered by Mind Masters AI Solutions.",
   heroTag: "AI Automation & Autonomous Systems",
   overviewDesc:
-    "We engineer autonomous AI agents, intelligent voice assistants, self-learning chatbots, and multi-tool workflow pipelines that automate operations, reduce costs, and elevate customer experiences 24/7.",
+    "We engineer autonomous AI agents, self-learning chatbots, and multi-tool workflow pipelines that automate operations, reduce costs, and elevate customer experiences 24/7.",
   problemsTitle: "Operational Bottlenecks We Eliminate With Autonomous AI",
   problems: [
     {
@@ -32,8 +32,8 @@ const config: ServicePageConfig = {
       desc: "Goal-driven AI agents capable of reasoning, planning, executing tool calls, and interacting with external APIs securely.",
     },
     {
-      title: "AI Voice Agent Development",
-      desc: "Ultra low-latency conversational voice agents for inbound call routing, outbound lead qualification, and customer service.",
+      title: "Automated Decision Engines",
+      desc: "Intelligent autonomous workflows for multi-step reasoning, automated routing, and operational decision making.",
     },
     {
       title: "Enterprise Workflow Automation",
@@ -55,16 +55,16 @@ const config: ServicePageConfig = {
     "Pinecone",
     "Qdrant",
     "WebSockets",
-    "Twilio Voice",
+    "REST & GraphQL APIs",
   ],
   useCases: [
     {
       title: "24/7 Customer Support Automation",
-      desc: "Voice and text agents resolving over 80% of tier-1 customer inquiries instantly with CRM context.",
+      desc: "Intelligent autonomous agents resolving over 80% of tier-1 customer inquiries instantly with CRM context.",
     },
     {
       title: "Automated Lead Qualification",
-      desc: "AI voice agents calling inbound leads, collecting requirements, and scheduling sales meetings directly on calendars.",
+      desc: "Autonomous AI agents qualifying inbound leads, collecting requirements, and scheduling sales meetings directly on calendars.",
     },
     {
       title: "Document & Invoice Processing",
@@ -100,9 +100,9 @@ const config: ServicePageConfig = {
         "Traditional chatbots follow rigid decision trees. AI agents use advanced LLM reasoning to understand context, make decisions, execute multi-step tools, and query databases to achieve complex goals autonomously.",
     },
     {
-      question: "Can AI voice agents integrate with our existing CRM and phone systems?",
+      question: "Can AI agents integrate with our existing CRM and enterprise tools?",
       answer:
-        "Yes. Our AI voice agents integrate seamlessly with phone providers (Twilio, Retell, Vapi) and enterprise CRMs (Salesforce, HubSpot, Zoho, custom backends) to read and write lead records live during calls.",
+        "Yes. Our AI agents integrate seamlessly with enterprise CRMs (Salesforce, HubSpot, Zoho, custom backends) and communication tools to read and write records securely in real time.",
     },
     {
       question: "How do you guarantee security and data privacy?",
@@ -112,7 +112,7 @@ const config: ServicePageConfig = {
   ],
   offers: [
     "Autonomous AI Agents Development",
-    "AI Voice Agent Development",
+    "Intelligent Process Automation",
     "AI Chatbot & Knowledge Copilots",
     "Enterprise Workflow Automation Services",
   ],
@@ -143,7 +143,7 @@ export const Route = createFileRoute("/ai-agents-automation")({
       {
         name: "keywords",
         content:
-          "AI agents development, AI voice agent development, AI chatbot development, business automation solutions, workflow automation services, AI integration services",
+          "AI agents development, AI chatbot development, business automation solutions, workflow automation services, AI integration services",
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: `${config.serviceTitle} Services | ${COMPANY_NAME}` },

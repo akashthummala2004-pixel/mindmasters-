@@ -22,12 +22,12 @@ const services: Service[] = [
   {
     num: "01",
     title: "AI Agents & Automation",
-    desc: "Autonomous AI agents, voice assistants, self-learning chatbots, and multi-tool workflow pipelines built for scale.",
+    desc: "Autonomous AI agents, self-learning chatbots, and multi-tool workflow pipelines built for scale.",
     href: "/ai-agents-automation",
     icon: Bot,
-    features: ["Autonomous AI Agents", "AI Voice Call Agents", "Workflow Automation", "RAG Knowledge Base"],
+    features: ["Autonomous AI Agents", "AI Chatbots & Copilots", "Workflow Automation", "RAG Knowledge Base"],
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1200&auto=format&fit=crop",
-    alt: "AI Agents and Voice Call Automation Solution by Mind Masters AI Solutions",
+    alt: "AI Agents and Workflow Automation Solution by Mind Masters AI Solutions",
   },
   {
     num: "02",

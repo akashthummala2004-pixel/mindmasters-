@@ -124,7 +124,7 @@ const config: ServicePageConfig = {
     {
       name: "AI Agents & Automation Services",
       slug: "/ai-agents-automation",
-      desc: "AI voice agents and automated workflow pipelines.",
+      desc: "Autonomous AI agents and automated workflow pipelines.",
     },
     {
       name: "Custom Software Development",

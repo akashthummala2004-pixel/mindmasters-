@@ -16,7 +16,6 @@ const links: NavLink[] = [
   { href: "/#services", label: "Services" },
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact" },
-  { href: "/ai-voice-agent", label: "AI Voice Agent" },
 ];
 
 export function Navbar() {
@@ -63,11 +62,10 @@ export function Navbar() {
         initial={{ y: -16, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`gpu-layer fixed inset-x-0 top-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 ${
-          scrolled
+        className={`gpu-layer fixed inset-x-0 top-0 z-50 backdrop-blur-xl border-b transition-colors duration-300 ${scrolled
             ? "bg-[#08090c]/90 border-white/[0.08]"
             : "bg-[#08090c]/75 border-white/[0.06]"
-        }`}
+          }`}
       >
         <nav className="mx-auto flex h-16 sm:h-[72px] max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-10">
           {/* Logo + brand — LEFT (Clickable link to home route /) */}
@@ -101,11 +99,10 @@ export function Navbar() {
                   href={l.href}
                   target={l.external ? "_blank" : undefined}
                   rel={l.external ? "noopener noreferrer" : undefined}
-                  className={`px-4 lg:px-5 py-1.5 text-[13.5px] lg:text-[14px] font-medium transition-all rounded-full ${
-                    isActive
+                  className={`px-4 lg:px-5 py-1.5 text-[13.5px] lg:text-[14px] font-medium transition-all rounded-full ${isActive
                       ? "text-white bg-white/[0.10] shadow-sm"
                       : "text-white/70 hover:text-white hover:bg-white/[0.06]"
-                  }`}
+                    }`}
                 >
                   {l.label}
                 </a>

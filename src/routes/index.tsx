@@ -62,7 +62,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "AI development company, AI automation services, AI agents development, AI voice agent development, AI chatbot development, AI/ML development services, generative AI solutions, business automation solutions, web application development company, mobile app development company, SaaS development company, custom software development company, software development services, API integration services, workflow automation services, AI integration services",
+          "AI development company, AI automation services, AI agents development, AI chatbot development, AI/ML development services, generative AI solutions, business automation solutions, web application development company, mobile app development company, SaaS development company, custom software development company, software development services, API integration services, workflow automation services, AI integration services",
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: `AI Development & Software Solutions Company | ${COMPANY_NAME}` },

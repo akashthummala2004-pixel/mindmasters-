@@ -20,20 +20,20 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { icon: Sparkles,         label: "AI SaaS Products",       description: "Production-grade AI ecosystems, autonomous agents and multi-tenant SaaS infrastructure." },
-  { icon: ShoppingBag,      label: "E-Commerce Platforms",   description: "Headless commerce, recommendation engines and omni-channel storefronts." },
-  { icon: HeartPulse,       label: "Hospital Management",    description: "HIPAA-grade EMR, radiology pipelines and AI diagnostic copilots." },
-  { icon: Factory,          label: "Factory Automation",     description: "Computer-vision defect detection, predictive maintenance and IoT telemetry." },
-  { icon: GraduationCap,    label: "Educational Platforms",  description: "AI tutors, adaptive assessment engines and live-classroom infrastructure." },
-  { icon: Bot,              label: "AI Assistants",          description: "Voice, chat and multi-modal assistants with tool use, memory and guardrails." },
-  { icon: LayoutDashboard,  label: "Enterprise Dashboards",  description: "Realtime analytics, alerts and AI insights for ops, finance and growth teams." },
+  { icon: Sparkles, label: "AI SaaS Products", description: "Production-grade AI ecosystems, autonomous agents and multi-tenant SaaS infrastructure." },
+  { icon: ShoppingBag, label: "E-Commerce Platforms", description: "Headless commerce, recommendation engines and omni-channel storefronts." },
+  { icon: HeartPulse, label: "Hospital Management", description: "HIPAA-grade EMR, radiology pipelines and AI diagnostic copilots." },
+  { icon: Factory, label: "Factory Automation", description: "Computer-vision defect detection, predictive maintenance and IoT telemetry." },
+  { icon: GraduationCap, label: "Educational Platforms", description: "AI tutors, adaptive assessment engines and live-classroom infrastructure." },
+  { icon: Bot, label: "AI Assistants", description: "Chat and multi-modal assistants with tool use, memory and guardrails." },
+  { icon: LayoutDashboard, label: "Enterprise Dashboards", description: "Realtime analytics, alerts and AI insights for ops, finance and growth teams." },
 ];
 
 const stats = [
   { value: "142+", label: "Projects deployed" },
-  { value: "10+",  label: "Industries served" },
-  { value: "98%",  label: "Systems live" },
-  { value: "99%",  label: "Client satisfaction" },
+  { value: "10+", label: "Industries served" },
+  { value: "98%", label: "Systems live" },
+  { value: "99%", label: "Client satisfaction" },
 ];
 
 export function ProjectCategories() {
