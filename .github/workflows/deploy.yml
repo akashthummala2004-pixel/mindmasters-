@@ -14,13 +14,43 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Trigger VPS Deployment via SSH
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: ${{ secrets.VPS_PORT || 22 }}
-          fingerprint: ${{ secrets.VPS_FINGERPRINT }}
-          script: |
-            /home/deploybot/deploy-mindmasters.sh
+      - name: Configure SSH & Verify Host Key Fingerprint
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_PORT: ${{ secrets.VPS_PORT || '22' }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          EXPECTED_FINGERPRINT: ${{ secrets.VPS_FINGERPRINT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          # Fetch server public host keys
+          ssh-keyscan -p "$VPS_PORT" "$VPS_HOST" > ~/.ssh/known_hosts 2>/dev/null
+          chmod 600 ~/.ssh/known_hosts
+
+          # Validate host fingerprint if EXPECTED_FINGERPRINT is provided
+          FETCHED_FINGERPRINTS=$(ssh-keygen -l -f ~/.ssh/known_hosts 2>/dev/null || true)
+          echo "Server host key fingerprints:"
+          echo "$FETCHED_FINGERPRINTS"
+
+          if [ -n "$EXPECTED_FINGERPRINT" ]; then
+            if ! echo "$FETCHED_FINGERPRINTS" | grep -iq "$EXPECTED_FINGERPRINT"; then
+              echo "🚨 SECURITY ERROR: Host fingerprint mismatch! Expected: $EXPECTED_FINGERPRINT"
+              exit 1
+            fi
+            echo "✓ Host key fingerprint verified successfully."
+          else
+            echo "✓ Host key scanned and added to known_hosts."
+          fi
+
+          # Setup deployment SSH key with proper newline formatting
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: Trigger Remote Deployment Script
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_PORT: ${{ secrets.VPS_PORT || '22' }}
+        run: |
+          ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes -o ConnectTimeout=30 -i ~/.ssh/id_ed25519 -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" "/home/deploybot/deploy-mindmasters.sh"
