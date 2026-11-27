@@ -16,34 +16,28 @@ jobs:
 
       - name: Trigger Remote Deployment via SSH
         env:
-          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_HOST: ${{ secrets.VPS_HOST || '147.93.171.146' }}
           VPS_PORT: ${{ secrets.VPS_PORT || '22' }}
-          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_USER: ${{ secrets.VPS_USER || 'deploybot' }}
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
 
-          if [ -z "$VPS_HOST" ]; then
-            echo "::error title=CONFIG_ERROR::VPS_HOST secret is missing or empty"
-            exit 1
-          fi
-          if [ -z "$VPS_USER" ]; then
-            echo "::error title=CONFIG_ERROR::VPS_USER secret is missing or empty"
-            exit 1
-          fi
           if [ -z "$VPS_SSH_KEY" ]; then
-            echo "::error title=CONFIG_ERROR::VPS_SSH_KEY secret is missing or empty"
+            echo "::error title=CONFIG_ERROR::VPS_SSH_KEY secret is missing or empty in GitHub repository secrets"
             exit 1
           fi
 
           printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_deploy
           chmod 600 ~/.ssh/id_deploy
 
-          SSH_OUT=$(ssh -v -o StrictHostKeyChecking=accept-new -o BatchMode=yes -o ConnectTimeout=20 -i ~/.ssh/id_deploy -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" "/home/deploybot/deploy-mindmasters.sh" 2>&1) || SSH_CODE=$?
+          echo "Attempting SSH connection to $VPS_USER@$VPS_HOST:$VPS_PORT..."
+          SSH_OUT=$(ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes -o ConnectTimeout=25 -i ~/.ssh/id_deploy -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" "/home/deploybot/deploy-mindmasters.sh" 2>&1) || SSH_CODE=$?
 
           if [ "${SSH_CODE:-0}" -ne 0 ]; then
             CLEAN_OUT=$(echo "$SSH_OUT" | tr '\n' ' | ' | head -c 500)
             echo "::error title=SSH_FAILURE::Code $SSH_CODE: $CLEAN_OUT"
             exit $SSH_CODE
           fi
+          echo "✓ Deployment script executed successfully on VPS."
